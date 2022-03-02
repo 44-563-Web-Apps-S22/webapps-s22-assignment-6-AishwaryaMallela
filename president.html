@@ -38,14 +38,40 @@ function checkGuess(){
         wrong+=1;
         alert("Wrong President")
         out.innerHTML = wrong
-    }
-    
-    
-   
-    
+    } 
     
 }
 </script>
+
+<div class="container">
+    <img src="LakeDuck.jpg" id="bird-image" width="100" height="100" onclick=swapImage()>
+    <script>
+        var useImage=1
+        function swapImage(){
+            switch(useImage){
+                case 1:{
+                    document.getElementById('bird-image').src="MacaroniPenguin.jpg"
+                    useImage=2;
+                    break;
+                }
+                case 2:{
+                    document.getElementById('bird-image').src="LaurelPigeon.jpg"
+                    useImage=3;
+                    break;
+                }
+                case 3:{
+                    document.getElementById('bird-image').src="LakeDuck.jpg"
+                    useImage=1;
+                    break;
+                }
+                default:{
+                    break;
+                }
+            }
+        }
+    </script>
+
+</div>
 
 </body>
 </html> 

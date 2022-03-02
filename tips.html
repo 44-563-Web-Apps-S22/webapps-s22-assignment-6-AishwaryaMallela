@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Tips Page</title>
+ </head>
+<body>
+
+<h2>Aishwarya Mallela computes tips</h2>
+
+<form>
+    <label for="form1_amount">Enter a check amount</label>
+    <input type ="number" id="form1_amount" name="form1_amount" value=20> <br>
+
+    <label for="form1_tipincrease">Enter tip increase</label>
+    <input type ="number" id="form1_tipincrease" name="form1_tipincrease" value=0.05> <br>
+
+    <input type="button" onclick="tips()" value="Find tips">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+function tips(){
+    var result="";
+    amount = document.getElementById("form1_amount").value
+    tipincrease = document.getElementById("form1_tipincrease").value
+    result="Tip amounts by increase of "+tipincrease+" are: "
+ 
+    var sum=amount*0.1;
+    result+=sum+0.0;
+    for(let i=1;i<10;i++){
+     var total=sum +(amount*tipincrease);
+     result += " "+Math.round(total*10)/10;
+     sum=Math.round(total*10)/10;
+    }
+document.getElementById("result").innerHTML=result;
+
+}
+
+</script>
+
+</body>
+</html> 

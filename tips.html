@@ -14,11 +14,14 @@
     <label for="form1_tipincrease">Enter tip increase</label>
     <input type ="number" id="form1_tipincrease" name="form1_tipincrease" value=0.05> <br>
 
-    <input type="button" onclick="tips()" value="Find tips">
+    <input type="button" onclick="tips()" value="Find tips"><br>
+
+    
 </form>
 
 
 <p id="result"></p>
+
 
 <script> 
 function tips(){
@@ -35,9 +38,42 @@ function tips(){
      sum=Math.round(total*10)/10;
     }
 document.getElementById("result").innerHTML=result;
-
 }
+</script>
 
+<form>
+    
+    <input type="radio" id="rg1_times" name="rg1_times" value="times"  onClick="chooseOp()" > 
+    <label for="rg1_times">*</label><br>
+
+    
+    <input type="radio" id="rg1_divide" name="rg1_divide" value="divide" onClick="chooseOp()">
+    <label for="rg1_divide">/</label> <br>
+
+    
+    <input type="radio" id="rg1_exponent" name="rg1_exponent" value="exponent" onClick="chooseOp()">
+    <label for="rg1_exponent">**</label> <br>
+</form>
+
+<p id="result1"></p>
+<script>
+    function chooseOp(){
+        amount = document.getElementById("form1_amount").value
+        tipincrease = document.getElementById("form1_tipincrease").value
+        times=document.getElementById("rg1_times").checked
+        divide=document.getElementById("rg1_divide").checked
+        exponent=document.getElementById("rg1_exponent").checked
+
+        if(times){
+            document.getElementById("result1").innerHTML="Times is "+amount*tipincrease;
+        }
+        else if(divide){
+            document.getElementById("result1").innerHTML="Divide is "+amount/tipincrease;
+        }
+        else if(exponent){
+            document.getElementById("result1").innerHTML="Exponent is "+amount**tipincrease;
+        }
+    }
 </script>
 
 </body>
